@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Krupali's Hotel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background: #fffaf9; }
+    .navbar { background: #1d3557 !important; }
+    .navbar-brand, .nav-link { color: white !important; font-weight: bold; }
+    .hero {
+      background: url('https://media.istockphoto.com/id/615365932/video/view-through-a-window-on-the-sea-palm-trees-near-the-hotel.jpg?s=640x640&k=20&c=EqV_cDhHH-lLXYtUXPKtrr1H1upICQNqLOhmdgGHGD0=') no-repeat center center/cover;
+      height: 70vh; display: flex; align-items: center; justify-content: center;
+      color: black;  
+      text-shadow: 1px 1px 3px white; 
+    }
+    .gallery img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; cursor: pointer; }
+    footer { background: #1d3557; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+    .modal-img { width: 100%; height: auto; }
+  </style>
+</head>
+<body>
+
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Krupali's Hotel</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon text-white"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="Rooms.html">Rooms</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero text-center">
+  <div>
+    <h1 class="display-4 fw-bold">Welcome to Krupali's Hotel</h1>
+    <p class="lead">Luxury • Comfort • Delicious Food</p>
+  </div>
+</section>
+
+<!-- About Hotel -->
+<div class="container my-5 text-center">
+  <h2 class="text-danger mb-4">About Our Hotel</h2>
+  <p class="fs-5">Krupali's Hotel is your perfect destination for a memorable stay with modern facilities, tasty food, and warm hospitality.</p>
+</div>
+
+<!-- Gallery -->
+<div class="container my-5">
+  <h2 class="text-danger text-center mb-4">Hotel Gallery</h2>
+  <div class="row g-4 gallery">
+    <div class="col-md-4"><img src="https://roomraccoon.com/wp-content/uploads/2024/06/DOUBLE-ROOM-FEATURED-BLOG-IMAGES-3.png" alt="Hotel" class="gallery-img"></div>
+    <div class="col-md-4"><img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/b1/d8/71/gallery-cafe-restaurant.jpg?w=900" alt="Hotel" class="gallery-img"></div>
+    <div class="col-md-4"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo1IfDHZB9-QGMaSecywWaLFYH1djcjtsO8g&s" alt="Hotel" class="gallery-img"></div>
+  </div>
+</div>
+
+<!-- Best Place -->
+<div class="container my-5 text-center">
+  <h2 class="text-danger mb-4">Best Place to Relax</h2>
+  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/21/d6/08/25/view-from-hotel.jpg?w=1200" alt="Best Place" class="img-fluid rounded gallery-img">
+  <p class="mt-3 fs-5">Our hotel is located near a beautiful spot where you can relax and enjoy nature.</p>
+</div>
+
+<!-- Owner -->
+
+
+<footer>
+  <p>© 2025 Krupali's Hotel | All Rights Reserved</p>
+</footer>
+
+<!-- Modal for Fullscreen Image -->
+<div class="modal fade" id="imageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+    <div class="modal-content bg-dark">
+      <div class="modal-body text-center">
+        <img src="" id="modalImage" class="modal-img rounded">
+      </div>
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // All gallery images
+  document.querySelectorAll('.gallery-img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('modalImage').src = img.src;
+      new bootstrap.Modal(document.getElementById('imageModal')).show();
+    });
+  });
+</script>
+</body>
+</html>
